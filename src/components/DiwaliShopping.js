@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 const DiwaliShopping = () => {
-  const relativeList = [
-    { id: "relativeListItem1", name: "Aunt Maya" },
-    { id: "relativeListItem2", name: "Uncle Rajesh" },
-    { id: "relativeListItem3", name: "Cousin Aryan" },
-    { id: "relativeListItem4", name: "Grandma Leela" },
-    { id: "relativeListItem5", name: "Grandpa Mohan" },
-  ];
+  const [relativeList] = useState([
+    "Aunt Maya",
+    "Uncle Rajesh",
+    "Cousin Aryan",
+    "Grandma Leela",
+    "Grandpa Mohan",
+  ]);
+
+  const listKey = "relativeList";
 
   return (
     <div>
       <h1>Diwali Shopping List</h1>
       <p>Diwali is coming! Time to visit and shop for:</p>
-      <ol>
-        {relativeList.map((relative) => (
-          <li key={relative.id}>{relative.name}</li>
+      <ol key={listKey}>
+        {relativeList.map((relative, index) => (
+          <li key={`relativeListItem${index + 1}`}>{relative}</li>
         ))}
       </ol>
     </div>
