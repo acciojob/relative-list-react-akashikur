@@ -15,9 +15,9 @@ const DiwaliShopping = () => {
     <div>
       <h1>Diwali Shopping List</h1>
       <p>Diwali is coming! Time to visit and shop for:</p>
-      <ol key={listKey}>
+      <ol id={listKey}>
         {relativeList.map((relative, index) => (
-          <li key={`relativeListItem${index + 1}`}>{relative}</li>
+          <li id={`relativeListItem${index + 1}`}>{relative}</li>
         ))}
       </ol>
     </div>
